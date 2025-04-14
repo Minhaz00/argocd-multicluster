@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: minhaz71/argocd-multicluster-demo:prod-1.0.0
+        image: minhaz71/argocd-multicluster-demo:prod-2.0.0
         ports:
         - containerPort: 3000
