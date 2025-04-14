@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-my-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Minhaz00/argocd-multicluster.git # https://github.com/username/repo-name.git
+    targetRevision: HEAD
+    path: manifests/prod
+  destination:
+    server: https://BA2050040758E8F43581665B99504417.gr7.ap-southeast-1.eks.amazonaws.com # https://XXXXXXXX.gr7.ap-southeast-1.eks.amazonaws.com
+    namespace: prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
